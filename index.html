@@ -17,7 +17,7 @@
     <h1 class="title-text">Deserts</h1>
     <div w3-include-html="text.txt"></div>
     <div class="container">
-        <div class="category" id="category1">
+        <div class="category" id="category_01">
             <p>Icecream</p>
             <p><input type="submit" value="Vanilla" id="vanilla"></p>
             <p><input type="submit" value="Chocolate" id="chocolate"></p>
@@ -26,13 +26,38 @@
 
 
     </div>
+    <div class="container">
+        <div class="category" id="category_02">
+            <p>Waffles</p>
+            <p><input type="submit" value="Pure" id="pure"></p>
+            <p><input type="submit" value="Sugar" id="sugar"></p>
+            <p><input type="submit" value="Syrup" id="syrup"></p>
+        </div>
 
+
+    </div>
+    <div class="container">
+        <div class="category" id="category_03">
+            <p>Beverages</p>
+            <p><input type="submit" value="Tea" id="tea"></p>
+            <p><input type="submit" value="Coffee" id="coffee"></p>
+            <p><input type="submit" value="Fruit Juice" id="fruit"></p>
+        </div>
+
+        
+    </div>
+    <div class="'content">
+        <iframe class="info" src="text.txt" width="80%" height="400px"></iframe>
+    </div>
 
 
 </div>
 
     <script>
-
+        $('input').click(function(){
+            console.log(this.id,$(this).parent().parent())
+            $('iframe').attr('src',`${$(this).parent().parent()[0].id}/${this.id}/${this.id}.txt`)
+        })
 
         
     </script>
